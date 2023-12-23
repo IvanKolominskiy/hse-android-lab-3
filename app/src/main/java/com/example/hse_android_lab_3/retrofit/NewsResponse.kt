@@ -1,5 +1,5 @@
 package com.example.hse_android_lab_3.retrofit
 
-data class NewsResponse (
+data class NewsResponse(
     val results: ArrayList<News>
 )

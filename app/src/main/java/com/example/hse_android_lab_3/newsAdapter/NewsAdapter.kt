@@ -13,7 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hse_android_lab_3.R
 import com.example.hse_android_lab_3.retrofit.News
 
-class NewsAdapter(dataset: ArrayList<News>, context: Activity) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
+class NewsAdapter(dataset: ArrayList<News>, context: Activity) :
+    RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
     private var dataset: ArrayList<News> = ArrayList()
 
     private var context: Activity? = null
