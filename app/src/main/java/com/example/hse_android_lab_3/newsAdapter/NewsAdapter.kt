@@ -1,21 +1,26 @@
 package com.example.hse_android_lab_3.newsAdapter
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hse_android_lab_3.R
 import com.example.hse_android_lab_3.retrofit.News
 
-class NewsAdapter(dataset: ArrayList<News>) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
+class NewsAdapter(dataset: ArrayList<News>, context: Activity) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
     private var dataset: ArrayList<News> = ArrayList()
+
+    private var context: Activity? = null
 
     init {
         this.dataset = dataset
+        this.context = context
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, ViewType: Int): ViewHolder {
@@ -33,15 +38,26 @@ class NewsAdapter(dataset: ArrayList<News>) : RecyclerView.Adapter<NewsAdapter.V
         holder.getTextView().text = dataset[position].title + "\n\n" + dataset[position].description
 
         holder.getButton().setOnClickListener {
-            val browserIntent =
-                Intent(Intent.ACTION_VIEW, android.net.Uri.parse(dataset[position].link))
-            holder.itemView.context.startActivity(browserIntent)
+            if (dataset[position].link == null) {
+                Toast.makeText(context, "There is no link.", Toast.LENGTH_SHORT).show()
+            } else {
+                val browserIntent =
+                    Intent(Intent.ACTION_VIEW, android.net.Uri.parse(dataset[position].link))
+                holder.itemView.context.startActivity(browserIntent)
+            }
         }
     }
 
-
     @SuppressLint("NotifyDataSetChanged")
     fun addNews(news: News) {
+        if (news.title == null) {
+            news.title = "There is no title."
+        }
+
+        if (news.description == null) {
+            news.description = "There is no description."
+        }
+
         dataset.add(news)
         notifyDataSetChanged()
     }

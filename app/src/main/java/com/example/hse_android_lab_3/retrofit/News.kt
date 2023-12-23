@@ -1,7 +1,7 @@
 package com.example.hse_android_lab_3.retrofit
 
 data class News (
-    val title: String,
-    val description: String,
+    var title: String,
+    var description: String,
     val link: String
 )
