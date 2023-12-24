@@ -1,5 +1,6 @@
-package com.example.hse_android_lab_3.retrofit
+package com.example.hse_android_lab_3.api
 
+import com.example.hse_android_lab_3.models.NewsResponse
 import retrofit2.http.GET
 
 interface NewsApi {

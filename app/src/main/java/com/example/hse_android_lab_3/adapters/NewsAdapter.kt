@@ -1,4 +1,4 @@
-package com.example.hse_android_lab_3.newsAdapter
+package com.example.hse_android_lab_3.adapters
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -11,7 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hse_android_lab_3.R
-import com.example.hse_android_lab_3.retrofit.News
+import com.example.hse_android_lab_3.models.News
 
 class NewsAdapter(dataset: ArrayList<News>, context: Activity) :
     RecyclerView.Adapter<NewsAdapter.ViewHolder>() {

@@ -1,4 +1,4 @@
-package com.example.hse_android_lab_3.retrofit
+package com.example.hse_android_lab_3.models
 
 data class News(
     var title: String,

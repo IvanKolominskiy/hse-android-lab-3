@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hse_android_lab_3.newsAdapter.NewsAdapter
-import com.example.hse_android_lab_3.retrofit.NewsApi
+import com.example.hse_android_lab_3.adapters.NewsAdapter
+import com.example.hse_android_lab_3.api.NewsApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
